@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <cassert>
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
