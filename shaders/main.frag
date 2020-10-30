@@ -7,7 +7,6 @@ layout (location = 1) uniform float radius;
 
 void main()
 {
-    if (length(pos - center) > radius)
-       discard;
-    FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);
+    float dist = length(pos - center);
+    FragColor = vec4(1.0f, 0.5f, 0.2f, smoothstep(radius + 0.5, radius - 0.5, dist));
 }

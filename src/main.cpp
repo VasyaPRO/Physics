@@ -131,6 +131,8 @@ int main()
     glDebugMessageCallback(debug_message_callback, nullptr);
 
     glfwSwapInterval(1); // VSync
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
 
     Shader shader;
     shader.loadFromFile("shaders/main.vert", "shaders/main.frag");
@@ -166,8 +168,6 @@ int main()
     circles.emplace_back(Vec2(6, 40), 22, Vec2(17, 86), 0.9);
     circles.emplace_back(Vec2(256, -75), 78, Vec2(-18, 34), 15);
     circles.emplace_back(Vec2(178, 178), 89, Vec2(45, 78), 10.9);
-
-    int iter = 0;
     while (!glfwWindowShouldClose(window))
     {
         processInput(window);
